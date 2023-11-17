@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    {% load static %}
+    <style>
+       body{
+        background-image: url('{% static "images/std1.webp" %}');
+        
+    }
+    </style>
+</head>
+<body>
+      <br>
+      <br>
+      <br>
+     <div class="container col-sm-4" >
+        <form action="{% url 'std' %}" method="post">
+            {% csrf_token %}
+            <h2 style="color: coral;">ENTER Students Detail</h2>
+            <div class="form-group">
+                <label for="exampleInputPassword1" style="color: rgb(215, 61, 10);">Student Name</label>
+                <input  type="text" class="form-control" name="std_name" placeholder="Enter  Name" required>
+              </div>
+              <div class="form-group">
+                <label for="address" style="color: rgb(215, 68, 19);">Address</label>
+                <textarea  type="textarea" class="form-control" name="std_addr" placeholder="Enter Address" required></textarea>
+              </div>
+            <div class="form-group">
+              <label for="exampleInputage" style="color: rgb(219, 63, 11);">Age</label>
+              <input  type="number" class="form-control" name="std_age"  placeholder="Enter Age" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1" style="color: rgb(219, 63, 11);">Email</label>
+                <input  type="email" class="form-control" name="std_em"  placeholder="Enter email">
+              </div>
+            <div class="form-group">
+                <label for="exampleInputdate" style="color: rgb(201, 62, 16);">Date</label>
+                <input  type="date" class="form-control" name="std_date" placeholder="Enter date" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Education</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="std_edu" required>
+                  <option>10th</option>
+                  <option>12th</option>
+                  <option>Ug</option>
+                  <option>pg</option>
+                  <option>Phd</option>
+                </select>
+              </div>
+              <div class="form-group">
+                
+                <div class="row">
+                  <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+                  <div class="col-sm-10">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="stdgen" id="inlineRadio1" value="male">
+                        <label style="color: brown;" class="form-check-label" for="inlineRadio1">male</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="stdgen" id="inlineRadio2" value="Female">
+                        <label style="color: brown;" class="form-check-label" for="inlineRadio2">female</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="stdgen" id="inlineRadio3" value="Others">
+                        <label style="color: brown;" class="form-check-label" for="inlineRadio3">other community</label>
+                      </div>
+                  </div>
+              </div> 
+            
+                
+              <div class="form-group">
+                <label for="exampleInputPassword1" style="color: rgb(223, 65, 12);">Number</label>
+                <input  type="text" class="form-control" name="std_num" placeholder="Enter stock" required><br>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div>
+            
+        </div>
+</body>
+</html>
